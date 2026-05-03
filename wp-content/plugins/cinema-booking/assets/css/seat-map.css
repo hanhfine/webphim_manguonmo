@@ -1,0 +1,65 @@
+.cinema-seat-map {
+	display: grid;
+	gap: 14px;
+}
+
+.cinema-seat-row {
+	display: grid;
+	grid-template-columns: 48px 1fr;
+	align-items: center;
+	gap: 12px;
+}
+
+.cinema-seat-row-label {
+	font-weight: 700;
+	color: #f4d276;
+}
+
+.cinema-seat-row-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(34px, 1fr));
+	gap: 10px;
+}
+
+.cinema-seat {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 34px;
+	border-radius: 10px;
+	background: #32b36b;
+	color: #08111f;
+	font-size: 12px;
+	font-weight: 700;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: transform 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+}
+
+.cinema-seat:hover {
+	transform: translateY(-2px);
+}
+
+.cinema-seat.is-vip {
+	background: #aa6ee8;
+	color: #ffffff;
+}
+
+.cinema-seat.is-couple {
+	background: #ef7d57;
+	color: #ffffff;
+}
+
+.cinema-seat.is-booked,
+.cinema-seat.is-locked {
+	background: #cf334d;
+	color: #ffffff;
+	cursor: not-allowed;
+	opacity: 0.65;
+}
+
+.cinema-seat.is-selected {
+	background: #f9d776;
+	color: #111827;
+	border-color: #fff1b8;
+}
