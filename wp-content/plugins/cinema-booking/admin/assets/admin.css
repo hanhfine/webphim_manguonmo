@@ -1,0 +1,201 @@
+.cinema-admin-wrap {
+	max-width: 1200px;
+}
+
+.cinema-kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 16px;
+	margin: 24px 0;
+}
+
+.cinema-kpi-card,
+.cinema-panel,
+.cinema-timeline-row {
+	background: #ffffff;
+	border: 1px solid #d8dee7;
+	border-radius: 16px;
+	box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+.cinema-kpi-card {
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.cinema-kpi-card span {
+	color: #6b7280;
+}
+
+.cinema-kpi-card strong {
+	font-size: 30px;
+	color: #111827;
+}
+
+.cinema-panel {
+	padding: 20px;
+}
+
+.cinema-filter-bar {
+	display: flex;
+	align-items: end;
+	gap: 12px;
+	margin: 16px 0;
+}
+
+.cinema-timeline-row {
+	padding: 16px;
+	margin-bottom: 16px;
+	display: grid;
+	grid-template-columns: minmax(180px, 220px) 1fr;
+	gap: 16px;
+}
+
+.cinema-timeline-room {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.cinema-timeline-room span {
+	color: #6b7280;
+}
+
+.cinema-timeline-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.cinema-timeline-item,
+.cinema-timeline-empty {
+	padding: 12px 14px;
+	border-radius: 14px;
+	background: #f3f4f6;
+	min-width: 220px;
+}
+
+.cinema-timeline-item {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.cinema-status-open {
+	background: #dcfce7;
+}
+
+.cinema-status-locked {
+	background: #fee2e2;
+}
+
+.cinema-status-completed {
+	background: #dbeafe;
+}
+
+.cinema-status-cancelled {
+	background: #e5e7eb;
+}
+
+.cinema-pricing-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(120px, 1fr));
+	gap: 12px;
+}
+
+.cinema-pricing-grid label {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.cinema-seat-builder {
+	display: grid;
+	gap: 14px;
+	padding: 16px;
+	background: #0f1727;
+	border-radius: 14px;
+}
+
+.cinema-seat-builder-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	color: #e5e7eb;
+}
+
+.cinema-seat-builder-legend span {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.cinema-seat-chip,
+.cinema-seat-builder-seat {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+.cinema-seat-chip {
+	width: 18px;
+	height: 18px;
+}
+
+.cinema-seat-builder-grid {
+	display: grid;
+	gap: 10px;
+}
+
+.cinema-seat-builder-row {
+	display: grid;
+	grid-template-columns: 32px 1fr;
+	gap: 10px;
+	align-items: center;
+}
+
+.cinema-seat-builder-row-label {
+	color: #f9d776;
+	font-weight: 700;
+}
+
+.cinema-seat-builder-row-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(36px, 1fr));
+	gap: 8px;
+}
+
+.cinema-seat-builder-seat {
+	min-height: 30px;
+	padding: 0 4px;
+}
+
+.cinema-seat-chip.is-normal,
+.cinema-seat-builder-seat.is-normal {
+	background: #4ade80;
+	color: #052e16;
+}
+
+.cinema-seat-chip.is-vip,
+.cinema-seat-builder-seat.is-vip {
+	background: #a855f7;
+	color: #ffffff;
+}
+
+.cinema-seat-chip.is-couple,
+.cinema-seat-builder-seat.is-couple {
+	background: #fb7185;
+	color: #ffffff;
+}
+
+.cinema-seat-chip.is-inactive,
+.cinema-seat-builder-seat.is-inactive {
+	background: #334155;
+	color: #cbd5e1;
+	text-decoration: line-through;
+}
