@@ -24,8 +24,13 @@ class Cinema_Booking_REST_Showtimes {
 			'relation' => 'AND',
 			array(
 				'key'   => '_cinema_showtime_status',
-				'value' => array('open', 'locked'),
-				'compare' => 'IN',
+				'value' => 'open',
+			),
+			array(
+				'key'     => '_cinema_showtime_start_datetime',
+				'value'   => current_time('mysql'),
+				'compare' => '>=',
+				'type'    => 'DATETIME',
 			),
 		);
 

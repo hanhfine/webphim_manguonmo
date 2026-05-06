@@ -1,5 +1,13 @@
 (function () {
 	const form = document.querySelector('[data-cinema-checkout-form]');
+	const notify = (message) => {
+		if (typeof window.cinemaShowToast === 'function') {
+			window.cinemaShowToast(message);
+			return;
+		}
+
+		window.alert(message);
+	};
 
 	if (!form || typeof window.fetch !== 'function') {
 		return;
@@ -28,7 +36,7 @@
 		const payload = await response.json();
 
 		if (!response.ok) {
-			window.alert(payload.message || 'Khong the xac nhan dat ve.');
+			notify(payload.message || 'Không thể xác nhận đặt vé.');
 			return;
 		}
 

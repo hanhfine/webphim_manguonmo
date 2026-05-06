@@ -1,70 +1,90 @@
 <?php
 /*
-Template Name: My Bookings
+Template Name: Tra cứu vé
 */
 
 get_header();
 
 $manager  = cinema_theme_get_booking_manager();
-$bookings = is_user_logged_in() && $manager ? $manager->get_user_bookings(get_current_user_id(), 50) : array();
-$user     = wp_get_current_user();
-?>
-<main class="cinema-shell">
-	<section class="cinema-page-hero">
-		<div>
-			<p class="cinema-kicker"><?php esc_html_e('My Account', 'cinema-theme'); ?></p>
-			<h1><?php echo esc_html(is_user_logged_in() ? $user->display_name : __('Customer Tickets', 'cinema-theme')); ?></h1>
-			<p><?php echo esc_html(is_user_logged_in() ? $user->user_email : __('Sign in to access your ticket history and profile details.', 'cinema-theme')); ?></p>
-		</div>
-	</section>
+$code     = trim((string) ($_GET['code'] ?? ''));
+$bookings = array();
 
-	<?php if (! is_user_logged_in()) : ?>
-		<div class="cinema-empty-card">
-			<h3><?php esc_html_e('Please log in to view bookings.', 'cinema-theme'); ?></h3>
-			<p><a class="cinema-cta" href="<?php echo esc_url(cinema_theme_get_page_url('auth')); ?>"><?php esc_html_e('Open Login / Register', 'cinema-theme'); ?></a></p>
-		</div>
-	<?php else : ?>
-		<section class="cinema-booking-history">
+if ($manager) {
+	try {
+		if ('' !== $code) {
+			$booking = $manager->find_booking_by_code($code);
+
+			if (! empty($booking)) {
+				$bookings[] = $booking;
+			} elseif (isset($_GET['code'])) {
+				cinema_set_flash('error', 'Không tìm thấy mã đặt vé tương ứng.');
+			}
+		}
+	} catch (Throwable $exception) {
+		cinema_set_flash('error', $exception->getMessage());
+	}
+}
+?>
+<main class="page-shell">
+	<section class="page-band">
+		<div class="container">
+			<div class="section-head compact">
+				<div>
+					<p class="eyebrow"><?php esc_html_e('Tra cứu vé', 'cinema-theme'); ?></p>
+					<h1><?php esc_html_e('Lịch sử vé của khách hàng', 'cinema-theme'); ?></h1>
+					<p><?php esc_html_e('Nhập mã đặt vé để xem lại thông tin suất chiếu, ghế và trạng thái thanh toán.', 'cinema-theme'); ?></p>
+				</div>
+			</div>
+
+			<form class="toolbar" method="get">
+				<div class="toolbar-field">
+					<label for="code"><?php esc_html_e('Mã đặt vé', 'cinema-theme'); ?></label>
+					<input id="code" type="text" name="code" value="<?php echo esc_attr($code); ?>" placeholder="CB123ABC">
+				</div>
+				<div class="toolbar-actions">
+					<button class="button-primary" type="submit"><?php esc_html_e('Tra cứu ngay', 'cinema-theme'); ?></button>
+				</div>
+			</form>
+
 			<?php if (empty($bookings)) : ?>
-				<div class="cinema-empty-card">
-					<h3><?php esc_html_e('No bookings yet.', 'cinema-theme'); ?></h3>
-					<p><?php esc_html_e('Once you complete a booking, your e-ticket history will appear here.', 'cinema-theme'); ?></p>
+				<div class="empty-state">
+					<h2><?php esc_html_e('Chưa có kết quả', 'cinema-theme'); ?></h2>
+					<p><?php esc_html_e('Nhập mã đặt vé để xem lại thông tin vé đã tạo.', 'cinema-theme'); ?></p>
+					<?php if (is_user_logged_in()) : ?>
+						<p><a class="button-secondary" href="<?php echo esc_url(cinema_theme_get_page_url('profile')); ?>"><?php esc_html_e('Vào hồ sơ của tôi', 'cinema-theme'); ?></a></p>
+					<?php endif; ?>
+				</div>
+			<?php else : ?>
+				<div class="booking-list">
+					<?php foreach ($bookings as $booking) : ?>
+						<article class="booking-row-card">
+							<div class="booking-row-main">
+								<img src="<?php echo esc_url(cinema_poster_url($booking['movie']['poster_url'] ?? '')); ?>" alt="<?php echo esc_attr($booking['movie']['title'] ?? ''); ?>">
+								<div>
+									<div class="movie-meta-line">
+										<span class="pill"><?php echo esc_html($booking['booking_code']); ?></span>
+										<span class="status-pill <?php echo esc_attr(cinema_badge_class((string) ($booking['payment_status'] ?? 'pending'))); ?>"><?php echo esc_html(cinema_status_label((string) ($booking['payment_status'] ?? 'pending'))); ?></span>
+									</div>
+									<h2><?php echo esc_html(cinema_theme_present_text($booking['movie']['title'] ?? '', __('Phim đang cập nhật', 'cinema-theme'))); ?></h2>
+									<p><?php echo esc_html(cinema_join_non_empty(array(cinema_theme_present_text($booking['cinema']['title'] ?? '', function_exists('cinema_booking_get_single_cinema_name') ? cinema_booking_get_single_cinema_name() : __('Rạp đang cập nhật', 'cinema-theme')), cinema_theme_present_text($booking['room']['title'] ?? '', __('Phòng đang cập nhật', 'cinema-theme')), $booking['showtime']['start_datetime'] ?? ''), ' / ')); ?></p>
+									<div class="ticket-seats compact">
+										<?php foreach ((array) ($booking['seats'] ?? array()) as $seat) : ?>
+											<span><?php echo esc_html($seat['label'] ?? ($seat['seat_label'] ?? '')); ?></span>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							</div>
+							<div class="booking-row-side">
+								<strong><?php echo esc_html(cinema_currency((float) ($booking['total_amount'] ?? 0))); ?></strong>
+								<span><?php echo esc_html(cinema_payment_label((string) ($booking['payment_method'] ?? 'cash'))); ?></span>
+								<a class="button-secondary" href="<?php echo esc_url(add_query_arg('code', urlencode((string) $booking['booking_code']), cinema_theme_get_page_url('booking-success'))); ?>"><?php esc_html_e('Mở chi tiết', 'cinema-theme'); ?></a>
+							</div>
+						</article>
+					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
-
-			<?php foreach ($bookings as $booking) : ?>
-				<?php $ticket_pdf = cinema_theme_get_ticket_download($booking['booking_id'], false); ?>
-				<?php $delivery = cinema_theme_get_ticket_delivery_meta($booking['booking_id']); ?>
-				<article class="cinema-history-card">
-					<div class="cinema-ticket-header">
-						<div>
-							<p class="cinema-kicker"><?php esc_html_e('Booking Code', 'cinema-theme'); ?></p>
-							<h2><?php echo esc_html($booking['booking_code']); ?></h2>
-						</div>
-						<a class="cinema-ghost-link" href="<?php echo esc_url(add_query_arg('booking', $booking['booking_id'], cinema_theme_get_page_url('booking-success'))); ?>">
-							<?php esc_html_e('Open Ticket', 'cinema-theme'); ?>
-						</a>
-					</div>
-					<div class="cinema-detail-grid">
-						<div><strong><?php esc_html_e('Movie', 'cinema-theme'); ?></strong><span><?php echo esc_html($booking['movie']['title'] ?? ''); ?></span></div>
-						<div><strong><?php esc_html_e('Showtime', 'cinema-theme'); ?></strong><span><?php echo esc_html($booking['showtime']['start_datetime'] ?? ''); ?></span></div>
-						<div><strong><?php esc_html_e('Seats', 'cinema-theme'); ?></strong><span><?php echo esc_html(implode(', ', wp_list_pluck($booking['seats'], 'label'))); ?></span></div>
-						<div><strong><?php esc_html_e('Total', 'cinema-theme'); ?></strong><span><?php echo esc_html(number_format_i18n((float) ($booking['total_amount'] ?? 0), 0)); ?></span></div>
-						<div><strong><?php esc_html_e('Payment Status', 'cinema-theme'); ?></strong><span><?php echo esc_html(strtoupper((string) ($booking['payment_status'] ?? 'pending'))); ?></span></div>
-						<div><strong><?php esc_html_e('Payment Method', 'cinema-theme'); ?></strong><span><?php echo esc_html(strtoupper((string) ($booking['payment_method'] ?? 'cash'))); ?></span></div>
-					</div>
-					<div class="cinema-ticket-actions">
-						<?php if (! empty($ticket_pdf['available']) && ! empty($ticket_pdf['url'])) : ?>
-							<a class="cinema-ghost-link" href="<?php echo esc_url($ticket_pdf['url']); ?>" target="_blank" rel="noopener"><?php esc_html_e('Download PDF', 'cinema-theme'); ?></a>
-						<?php endif; ?>
-						<?php if (! empty($delivery['emailed_at'])) : ?>
-							<span class="cinema-status-copy"><?php echo esc_html(sprintf(__('Emailed at %s', 'cinema-theme'), $delivery['emailed_at'])); ?></span>
-						<?php endif; ?>
-					</div>
-				</article>
-			<?php endforeach; ?>
-		</section>
-	<?php endif; ?>
+		</div>
+	</section>
 </main>
 <?php
 get_footer();

@@ -13,14 +13,12 @@ services:
 
   wordpress:
     image: wordpress:6.5-php8.2-apache
-    depends_on:
-      - db
     restart: unless-stopped
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-wordpress}
-      WORDPRESS_DB_USER: ${MYSQL_USER:-wordpress}
-      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+      WORDPRESS_DB_HOST: ${XAMPP_MYSQL_HOST:-host.docker.internal:3306}
+      WORDPRESS_DB_NAME: ${XAMPP_MYSQL_DATABASE:-mycinema_wordpress}
+      WORDPRESS_DB_USER: ${XAMPP_MYSQL_USER:-root}
+      WORDPRESS_DB_PASSWORD: ${XAMPP_MYSQL_PASSWORD:-}
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-1}
     ports:
       - "8080:80"

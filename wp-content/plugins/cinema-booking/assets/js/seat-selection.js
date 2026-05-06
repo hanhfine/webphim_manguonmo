@@ -1,5 +1,13 @@
 (function () {
 	const app = document.querySelector('[data-cinema-seat-app]');
+	const notify = (message) => {
+		if (typeof window.cinemaShowToast === 'function') {
+			window.cinemaShowToast(message);
+			return;
+		}
+
+		window.alert(message);
+	};
 
 	if (!app || typeof window.fetch !== 'function') {
 		return;
@@ -81,7 +89,7 @@
 
 	const lockSeats = async () => {
 		if (!selectedSeats.size) {
-			window.alert('Hay chon it nhat mot ghe.');
+			notify('Vui lòng chọn ít nhất một ghế.');
 			return;
 		}
 
@@ -101,7 +109,7 @@
 		const payload = await response.json();
 
 		if (!response.ok) {
-			window.alert(payload.message || 'Khong the khoa ghe luc nay.');
+			notify(payload.message || 'Không thể giữ ghế lúc này.');
 			return;
 		}
 

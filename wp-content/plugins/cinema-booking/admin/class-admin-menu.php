@@ -19,8 +19,8 @@ class Cinema_Booking_Admin_Menu {
 
 	public function register_menu_pages() {
 		add_menu_page(
-			__('Cinema Booking', 'cinema-booking'),
-			__('Cinema Booking', 'cinema-booking'),
+			__('MYCINEMA Admin', 'cinema-booking'),
+			__('MYCINEMA', 'cinema-booking'),
 			'edit_posts',
 			'cinema-booking-dashboard',
 			array($this, 'render_dashboard_page'),
@@ -30,8 +30,8 @@ class Cinema_Booking_Admin_Menu {
 
 		add_submenu_page(
 			'cinema-booking-dashboard',
-			__('Dashboard', 'cinema-booking'),
-			__('Dashboard', 'cinema-booking'),
+			__('Tổng quan', 'cinema-booking'),
+			__('Tổng quan', 'cinema-booking'),
 			'edit_posts',
 			'cinema-booking-dashboard',
 			array($this, 'render_dashboard_page')
@@ -39,8 +39,8 @@ class Cinema_Booking_Admin_Menu {
 
 		add_submenu_page(
 			'cinema-booking-dashboard',
-			__('Timeline Grid', 'cinema-booking'),
-			__('Timeline Grid', 'cinema-booking'),
+			__('Timeline suất chiếu', 'cinema-booking'),
+			__('Timeline suất chiếu', 'cinema-booking'),
 			'edit_posts',
 			'cinema-booking-timeline',
 			array($this, 'render_timeline_page')
@@ -48,8 +48,8 @@ class Cinema_Booking_Admin_Menu {
 
 		add_submenu_page(
 			'cinema-booking-dashboard',
-			__('Reports', 'cinema-booking'),
-			__('Reports', 'cinema-booking'),
+			__('Doanh thu', 'cinema-booking'),
+			__('Doanh thu', 'cinema-booking'),
 			'edit_posts',
 			'cinema-booking-reports',
 			array($this, 'render_reports_page')
@@ -57,8 +57,8 @@ class Cinema_Booking_Admin_Menu {
 
 		add_submenu_page(
 			'cinema-booking-dashboard',
-			__('Settings & Integration', 'cinema-booking'),
-			__('Settings & Integration', 'cinema-booking'),
+			__('Cài đặt rạp', 'cinema-booking'),
+			__('Cài đặt rạp', 'cinema-booking'),
 			'manage_options',
 			'cinema-booking-settings',
 			array($this, 'render_settings_page')
@@ -77,6 +77,7 @@ class Cinema_Booking_Admin_Menu {
 
 	public function render_dashboard_page() {
 		$stats = $this->get_dashboard_stats();
+		$quick_actions = $this->get_dashboard_actions();
 		include CINEMA_BOOKING_PATH . 'admin/views/dashboard.php';
 	}
 
@@ -174,9 +175,9 @@ class Cinema_Booking_Admin_Menu {
 	}
 
 	private function get_timeline_rows($selected_date) {
-		$rooms = get_posts(
+		$movies = get_posts(
 			array(
-				'post_type'      => 'room',
+				'post_type'      => 'movie',
 				'post_status'    => 'publish',
 				'posts_per_page' => -1,
 			)
@@ -184,7 +185,7 @@ class Cinema_Booking_Admin_Menu {
 
 		$timeline = array();
 
-		foreach ($rooms as $room) {
+		foreach ($movies as $movie) {
 			$showtimes = get_posts(
 				array(
 					'post_type'      => 'showtime',
@@ -193,8 +194,8 @@ class Cinema_Booking_Admin_Menu {
 					'meta_query'     => array(
 						'relation' => 'AND',
 						array(
-							'key'   => '_cinema_showtime_room_id',
-							'value' => $room->ID,
+							'key'   => '_cinema_showtime_movie_id',
+							'value' => $movie->ID,
 						),
 						array(
 							'key'     => '_cinema_showtime_start_datetime',
@@ -207,15 +208,16 @@ class Cinema_Booking_Admin_Menu {
 			);
 
 			$timeline[] = array(
-				'room'         => $room,
+				'movie'        => $movie,
 				'cinema_label' => $this->get_single_cinema_name(),
 				'items'        => array_map(
 					static function ($showtime) {
-						$movie_id = absint(get_post_meta($showtime->ID, '_cinema_showtime_movie_id', true));
+						$room_id = absint(get_post_meta($showtime->ID, '_cinema_showtime_room_id', true));
+						$title   = get_the_title($room_id);
 
 						return array(
 							'id'       => $showtime->ID,
-							'title'    => get_the_title($movie_id),
+							'title'    => $title ? $title : __('Phòng đang cập nhật', 'cinema-booking'),
 							'status'   => get_post_meta($showtime->ID, '_cinema_showtime_status', true),
 							'start'    => get_post_meta($showtime->ID, '_cinema_showtime_start_datetime', true),
 							'end'      => get_post_meta($showtime->ID, '_cinema_showtime_end_datetime', true),
@@ -260,6 +262,41 @@ class Cinema_Booking_Admin_Menu {
 		return $movie_report;
 	}
 
+	private function get_dashboard_actions() {
+		return array(
+			array(
+				'title'       => __('Quản lý phim', 'cinema-booking'),
+				'description' => __('Thêm phim, poster, trailer, thời lượng và trạng thái chiếu.', 'cinema-booking'),
+				'url'         => admin_url('edit.php?post_type=movie'),
+				'button'      => __('Mở danh sách phim', 'cinema-booking'),
+			),
+			array(
+				'title'       => __('Sơ đồ phòng chiếu', 'cinema-booking'),
+				'description' => __('Tạo phòng, số hàng ghế, ghế VIP, couple và ghế hỏng.', 'cinema-booking'),
+				'url'         => admin_url('edit.php?post_type=room'),
+				'button'      => __('Quản lý phòng', 'cinema-booking'),
+			),
+			array(
+				'title'       => __('Suất chiếu', 'cinema-booking'),
+				'description' => __('Gắn phim với phòng, giờ chiếu, giá vé và trạng thái mở bán.', 'cinema-booking'),
+				'url'         => admin_url('edit.php?post_type=showtime'),
+				'button'      => __('Quản lý suất chiếu', 'cinema-booking'),
+			),
+			array(
+				'title'       => __('Đơn đặt vé', 'cinema-booking'),
+				'description' => __('Theo dõi mã vé, khách hàng, ghế đã đặt và thanh toán.', 'cinema-booking'),
+				'url'         => admin_url('edit.php?post_type=booking'),
+				'button'      => __('Xem đơn đặt vé', 'cinema-booking'),
+			),
+			array(
+				'title'       => __('Web khách hàng', 'cinema-booking'),
+				'description' => __('Mở giao diện đặt vé chạy trực tiếp bằng theme WordPress.', 'cinema-booking'),
+				'url'         => home_url('/'),
+				'button'      => __('Xem website', 'cinema-booking'),
+			),
+		);
+	}
+
 	private function get_single_cinema_name() {
 		return cinema_booking_get_single_cinema_name();
 	}
@@ -279,6 +316,6 @@ class Cinema_Booking_Admin_Menu {
 		update_option('cinema_booking_single_cinema_address', sanitize_text_field(wp_unslash($_POST['cinema_booking_single_cinema_address'] ?? '')), false);
 		update_option('cinema_booking_single_cinema_city', sanitize_text_field(wp_unslash($_POST['cinema_booking_single_cinema_city'] ?? '')), false);
 
-		add_settings_error('cinema-booking-settings', 'settings_updated', __('Settings saved.', 'cinema-booking'), 'updated');
+		add_settings_error('cinema-booking-settings', 'settings_updated', __('Đã lưu cài đặt.', 'cinema-booking'), 'updated');
 	}
 }

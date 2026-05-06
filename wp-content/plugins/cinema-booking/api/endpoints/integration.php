@@ -150,9 +150,14 @@ class Cinema_Booking_REST_Integration {
 		$meta_query = array(
 			'relation' => 'AND',
 			array(
-				'key'     => '_cinema_showtime_status',
-				'value'   => array('open', 'locked'),
-				'compare' => 'IN',
+				'key'   => '_cinema_showtime_status',
+				'value' => 'open',
+			),
+			array(
+				'key'     => '_cinema_showtime_start_datetime',
+				'value'   => current_time('mysql'),
+				'compare' => '>=',
+				'type'    => 'DATETIME',
 			),
 		);
 
@@ -362,7 +367,7 @@ class Cinema_Booking_REST_Integration {
 			'id'               => $movie_id,
 			'title'            => get_the_title($movie_id),
 			'description'      => wp_strip_all_tags((string) $post->post_content),
-			'poster_url'       => get_the_post_thumbnail_url($movie_id, 'large') ?: '',
+			'poster_url'       => get_post_meta($movie_id, '_cinema_poster_url', true) ?: (get_the_post_thumbnail_url($movie_id, 'large') ?: ''),
 			'status'           => (string) get_post_meta($movie_id, '_cinema_movie_status', true),
 			'genre'            => $this->get_movie_genre_label($movie_id),
 			'duration_minutes' => absint(get_post_meta($movie_id, '_cinema_duration_minutes', true)),
@@ -399,7 +404,7 @@ class Cinema_Booking_REST_Integration {
 			'price_normal'  => (float) get_post_meta($showtime_id, '_cinema_showtime_price_normal', true),
 			'price_vip'     => (float) get_post_meta($showtime_id, '_cinema_showtime_price_vip', true),
 			'price_couple'  => (float) get_post_meta($showtime_id, '_cinema_showtime_price_couple', true),
-			'poster_url'    => get_the_post_thumbnail_url($movie_id, 'large') ?: '',
+			'poster_url'    => get_post_meta($movie_id, '_cinema_poster_url', true) ?: (get_the_post_thumbnail_url($movie_id, 'large') ?: ''),
 			'genre'         => $this->get_movie_genre_label($movie_id),
 			'duration_minutes' => absint(get_post_meta($movie_id, '_cinema_duration_minutes', true)),
 			'rating'        => (string) get_post_meta($movie_id, '_cinema_rating', true),

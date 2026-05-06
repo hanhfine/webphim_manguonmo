@@ -126,7 +126,7 @@ class Cinema_Booking_Seat_Manager {
 
 		$this->cleanup_expired_locks();
 
-		$room_id = absint(get_post_meta($showtime_id, '_cinema_showtime_room_id', true));
+		$room_id = $this->get_room_id_for_showtime( $showtime_id );
 
 		if (! $room_id) {
 			return array();
@@ -435,7 +435,7 @@ class Cinema_Booking_Seat_Manager {
 	private function get_valid_seat_ids_for_showtime($showtime_id, $seat_ids) {
 		global $wpdb;
 
-		$room_id = absint(get_post_meta($showtime_id, '_cinema_showtime_room_id', true));
+		$room_id = $this->get_room_id_for_showtime( $showtime_id );
 
 		if (! $room_id || empty($seat_ids)) {
 			return array();
@@ -475,6 +475,25 @@ class Cinema_Booking_Seat_Manager {
 		$rows  = preg_split('/[\s,]+/', strtoupper($value));
 
 		return array_values(array_filter(array_map('trim', (array) $rows)));
+	}
+
+	/**
+	 * Resolve room_id from cinema_showtimes (custom table).
+	 * Falls back to wp_postmeta for backward compatibility during transition.
+	 */
+	private function get_room_id_for_showtime( int $showtime_id ): int {
+		global $wpdb;
+		$room_id = (int) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT room_id FROM {$wpdb->prefix}cinema_showtimes WHERE id = %d",
+				$showtime_id
+			)
+		);
+		// Fallback to postmeta during migration period
+		if ( ! $room_id ) {
+			$room_id = absint( get_post_meta( $showtime_id, '_cinema_showtime_room_id', true ) );
+		}
+		return $room_id;
 	}
 
 	private function index_to_row_label($index) {

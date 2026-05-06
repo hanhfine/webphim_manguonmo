@@ -1,0 +1,631 @@
+Báo cáo Phần mềm mã nguồn mở
+ Phần mềm mã nguồn mở (Đại học Điện lực)
+Scan to open on Studeersnel
+Studocu is not sponsored or endorsed by any college or university
+ Báo cáo Phần mềm mã nguồn mở
+ Phần mềm mã nguồn mở (Đại học Điện lực)
+Scan to open on Studeersnel
+Studocu is not sponsored or endorsed by any college or university
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+ 
+           TRƯỜNG ĐẠI HỌC ĐIỆN LỰC
+KHOA CÔNG NGHỆ THÔNG TIN
+BÁO CÁO MÔN HỌC
+PHẦN MỀM MÃ NGUỒN MỞ
+ĐỀ TÀI:
+QUẢN LÝ WEBSITE BÁN GIÀY THỂ THAO
+Sinh viên thực hiện : 
+Giảng viên hướng dẫn : ThS. PHẠM ĐỨC HỒNG
+Ngành : CÔNG NGHỆ THÔNG TIN
+Chuyên ngành : CÔNG NGHỆ PHẦN MỀM
+Lớp : D16_CNPM6
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+PHIẾU CHẤM ĐIỂM
+STT Họ và tên sinh viên Nội dung thực hiện Điểm Chữ
+ký
+1
+2
+3
+Họ và tên giảng viên Chữ ký Ghi chú
+Giảng viên chấm 1:
+Giảng viên chấm 2:
+MỤC LỤC
+M  Đ UỞ Ầ ............................................................................................................................................................... 4
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+CH NG 1: T NG QUAN V  PH N M M MÃ NGU N MƯƠ Ổ Ề Ầ Ề Ồ Ở ......................................................... 5
+1.1T ng quan v  ph n m m mã ngu n mổ ề ầ ề ồ ở .......................................................................................... 5
+1.2 Gi i thi u v  PHP và MySQLớ ệ ề ................................................................................................................. 5
+1.3 Mã ngu n m  Wordpressồ ở ...................................................................................................................... 7
+1.4 XAMPP............................................................................................................................................................ 8
+CH NG 2: KI N TRÚC C A PH N M M MÃ NGU N MƯƠ Ế Ủ Ầ Ề Ồ Ở ...................................................... 10
+1. Ki n trúc chìmế ............................................................................................................................................ 10
+2. Nh ng th  m c c  b nữ ư ụ ơ ả ........................................................................................................................... 12
+CH NG 3: ÁP D NG MÃ NGU N M  XÂY D NG WEBSITEƯƠ Ụ Ồ Ở Ư .................................................. 14
+3.1 Gi i thi u v  websiteớ ệ ề ............................................................................................................................ 14
+3.2 Cài đ t websiteặ ........................................................................................................................................ 15
+3.2.1 Cài đ t ph n m m Xamppặ ầ ề .......................................................................................................... 15
+3.2.2 T o Database b ng MyAdminạ ằ ................................................................................................... 16
+3.2.3 Cài đ t Wordpress và k t n i databaseặ ế ố ................................................................................ 17
+Ch ng 4: Thi t k  giao di n và ki m thươ ế ế ệ ể ử ......................................................................................... 23
+4.1 Giao di n ng i dùngệ ườ ............................................................................................................................ 23
+4.1.1 Trang chủ............................................................................................................................................ 23
+4.1.2 Blog....................................................................................................................................................... 23
+4.1.3 Danh mục sản phẩm......................................................................................................................... 24
+4.1.4 Chi tiết sản phẩm.............................................................................................................................. 24
+4.1.5 Liên hệ................................................................................................................................................. 25
+4.2.6 Tài kho nả ........................................................................................................................................... 25
+4.2.7 Gi  hàngỏ ............................................................................................................................................. 25
+4.2.8 Thanh toán........................................................................................................................................ 26
+4.2 Trang qu n tr  h  th ngả ị ệ ố ...................................................................................................................... 27
+4.2.1 Trang qu n tr  bài vi tả ị ế ................................................................................................................. 27
+4.2.2 Trang qu n tr  s n ph mả ị ả ẩ ........................................................................................................... 28
+4.2.3 Trang menu....................................................................................................................................... 29
+4.2.4 Trang danh m c s n ph mụ ả ẩ ........................................................................................................ 30
+4.3 Thông tin ph n m mầ ề ............................................................................................................................ 30
+4.3.1 Giao diện sử dụng theme................................................................................................................ 30
+4.3.2 Các Plugin đang sử dụng................................................................................................................ 30
+K T LU NẾ Ậ ......................................................................................................................................................... 31
+DANH MỤC HÌNH ẢNH
+Hình 3. 1 Màn hình Welcome c a Xamppủ ............................................................................... 16
+Hình 3. 2. Màn hình Setup - Select Components................................................................... 16
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Hình 3. 3 Màn hình Setup - Installation folder......................................................................... 17
+Hình 3. 4 Hoàn thành cài đ t Xamppặ ........................................................................................ 17
+Hình 3. 5 Khởi động Apache và MySQL................................................................................... 18
+Hình 3. 6 Giao di n phpMyAdminệ .............................................................................................. 18
+Hình 3. 7 Cài đ t c u hình databaseặ ấ ......................................................................................... 19
+Hình 3. 8 Đăng nh p Wordpressậ ................................................................................................. 20
+Hình 3. 9 Thông tin tên mi nề ....................................................................................................... 20
+Hình 3. 10 Thông tin hosting........................................................................................................ 21
+Hình 3. 11 Nén file thành............................................................................................................... 21
+Hình 3. 12 Truy n mà ngu n vào hostingề ồ .............................................................................. 22
+Hình 3. 13 Xu t d  li u trên phpMyAdminấ ữ ệ ........................................................................... 22
+Hình 3. 14 Truy n d  li u v a xu tề ữ ệ ừ ấ ......................................................................................... 23
+Hình 3. 15 Web sau khi up lên hosting..................................................................................... 23
+Hình 4. 1 Giao di n trang chệ ủ ...................................................................................................... 25
+Hình 4. 2 Giao di n trang blogệ ..................................................................................................... 25
+Hình 4. 3 Giao di n trang s n ph mệ ả ẩ ......................................................................................... 26
+Hình 4. 4 Giao di n trang chi ti t s n ph mệ ế ả ẩ ......................................................................... 26
+Hình 4. 5 Giao di n trang liên hệ ệ ............................................................................................... 27
+Hình 4. 6 Giao di n trang tài kho nệ ả .......................................................................................... 27
+Hình 4. 7 Giao di n trang gi  hàngệ ỏ ............................................................................................ 28
+Hình 4. 8 Giao di n trang thanh toánệ ....................................................................................... 28
+Hình 4. 9 Giao di n trang qu n tr  bài vi tệ ả ị ế ............................................................................ 29
+Hình 4. 10 Giao di n trang thêm bài vi tệ ế ................................................................................ 29
+Hình 4. 11 Giao di n trang qu n tr  s n ph mệ ả ị ả ẩ .................................................................... 30
+Hình 4. 12 Giao di n trang thêm s n ph mệ ả ẩ .......................................................................... 30
+Hình 4. 13 Giao di n trang menuệ ............................................................................................... 31
+Hình 4. 14 Giao di n trang danh m c s n ph mệ ụ ả ẩ ................................................................ 32
+Hình 4. 15 Giao s  dung themeử ................................................................................................... 32
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+MỞ ĐẦU
+Do nhu cầu đòi hỏi ngày càng cao của xã hội cũng như của con người ngày càng
+cao, do đó để đáp ứng được nhu cầu giải trí của con người về tinh thần và thể
+chất cũng đòi hỏi nhiều hơn. Hiện nay do xã hội phát triển không ngừng và kéo
+theo sự lớn mạnh của các dịch vụ giải trí của nhiều nền tảng khác nhau. Trong
+đó, truy cập các website trên internet chính là phương tiện hữu ích được đa số
+người dùng lựa chọn. Đây chính là lí do mà thiết kế web truyện ra đời và phát
+triển mạnh mẽ. Với sự phát triển của công nghệ thông tin luôn cố gắng đáp ứng
+các yêu cầu củacon người. Việc đưa công nghệ thông tin áp dụng vào thiết kế và
+tạo dựng website giải trí là rất quan trọng và cần thiết. Vì vậy em đã chọn đề
+tài:” Xây dựng website bán giày online” em muốn tạo ra một website kết nối
+người dùng với những hệ  thống mua  sắm  thương mại điện tử... thông qua
+internet
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+CHƯƠNG 1: TỔNG QUAN VỀ PHẦN MỀM MÃ NGUỒN MỞ
+1.1Tổng quan về phần mềm mã nguồn mở
+Phần mềm mã nguồn mở là những phần mềm được cung cấp dưới cả dạng
+mã và nguồn, không chỉ là miễn phí về giá mua mà chủ yếu là miễn phí về bản
+quyền: người dùng có quyền sửa đổi, cả i tiến, phát triển, nâng cấp theo một số
+nguyên tắc chung quy định trong giấy phép phần mền mã nguồn mở mà không
+cần xin phép ai, điều mà họ không được phép làm đối với các phần mềm nguồn
+đóng.
+Nhà cung cấp phần mềm nguồn mở có quyền yêu cầu người dùng trả một
+số chi phí về các dịch vụ như: bảo hành, huấn luyện, nâng cấp, tư vấn, vv… là
+những dịch vụ thực sự để phục vụ người dùng, nhưng không được bán các sản
+phẩm nguồn mở vì nó là tài sản của trí tuệ chung, không phải là tài sản riêng của
+một nhà cung cấp nào.
+Ưu điểm của phần mền mã nguồn mở: Phần mềm được sao chép hoàn
+toàn miễn phí, tự do sử dụng chương trình cho mọi mục đích, tự do để nghiên
+cứu cấu trúc của chương trình, chỉnh sửa phù hợp với nhu cầu, truy cập vào mã
+nguồn, tự do phân phối lại các phiên bản cho nhiều người, tự do cải tiến chương
+trình và phát hành những bản cải tiến vì mục đích công cộng.
+           Nhược điểm của mã nguồn mở:
+- Tính bảo mật thấp.
+- Thiếu sáng tạo.
+- Tính tự do – tùy biến không cao.
+Một số mã nguồn mở đang được sử dụng hiện nay là: Joomla,
+Drupal, Wordpress, Magento, DotNetNuke, …
+1.2 Giới thiệu về PHP và MySQL
+PHP: Hypertext Preprocessor, thường được viết tắt thành PHP là một
+ngôn ngữ lập trình kịch bản hay một loại mã lệnh chủ yếu được dùng để phát
+triển các ứng dụng viết cho máy chủ, mã nguồn mở, dùng cho mục đích tổng
+quát. Nó rất thích hợp với web và có thể dễ dàng nhúng vào trang HTML. Do
+được tối ưu hóa cho các ứng dụng web, tốc độ nhanh, nhỏ gọn, cú pháp giống C
+và Java, dễ học và thời gian xây dựng sản phẩm tương đối ngắn hơn so với các
+ngôn ngữ khác nên PHP đã nhanh chóng trở thành một ngôn ngữ lập trình web
+phổ biến nhất thế
+giới.
+Ngôn ngữ, các thư viện, tài liệu gốc của PHP được xây dựng bởi cộng
+đồng và có sự đóng góp rất lớn của Zend Inc., công ty do các nhà phát triển cốt
+lõi của PHP lập nên nhằm tạo ra một môi trường chuyên nghiệp để đưa PHP
+phát triển ở quy mô doanh nghiệp. 
+Hiện nay PHP đã phát triễn đến phiên bản PHP 7 và vẫn đang trên đà phát
+triển tiếp. Trong phiên bản PHP 7 với việc sử dụng bộ nhân Zend Engine mới
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+PHPNG cho tốc độ nhanh gấp 2 lần phiên bản PHP 5. Ngoài ra ở phiên bản này
+còn thêm vào rất nhiều cú pháp, tính năng mới giúp cho PHP trở nên mạnh mẽ
+hơn.
+PHP chỉ phân tích các đoạn mã nằm trong những dấu giới hạn của nó. Bất
+cứ mã nào nằm ngoài những dấu giới hạn đều được xuất ra trực tiếp không
+thông qua xử lý bởi PHP. Các dấu giới hạn thường dùng nhất là <?php và ?>,
+tương  ứng  với  dấu  giới  hạn  mở  và  đóng.  Các  dấu  giới  hạn  <script
+language="php"> và </script> cũng đôi khi được sử dụng. Mục đích của những
+dấu giới hạn này là ngăn cách mã PHP với những đoạn mã thuộc ngôn ngữ khác,
+gồm cả HTML. Mọi đoạn mã bên ngoài các dấu này đều bị hệ thống phân tích
+bỏ qua và được xuất ra một cách trực tiếp.
+Mô hình lập trình PHP: Ứng dụng web sử dụng mô hình Client- Server.
+Mô hình này bao gồm một máy chủ (Server) có nhiệm vụ chia sẻ tài nguyên với
+máy khách (Client) thông qua mạng Internet. Hình ảnh dưới đây cho thấy các
+thành phần cơ bản của mô hình Client-Server.
+Hình 1.2. Mô hình Client-Server
+Server có thể chia sẻ các tài nguyên như: tập tin, websites, cơ sở dữ liệu,
+và email.
+Web server là một máy chủ chia sẻ trang web, và web browser (trình duyệt web)
+là một phần mềm phía client sử dụng để kết nối tới web server.
+Không   phải   ngẫu   nhiên   mà   các   trang   web   lớn   như   Yahoo,
+Facebook, Wikipedia, Digg, Joomla, WordPress, … lại được viết bằng PHP.
+Chính sự đơn giản, tính hiệu quả và linh động của PHP. Đã giúp nó trở thành
+ngôn ngữ phổ biến trong giới lập trình như hiện nay.
+Cơ sở dữ liệu MySQL  đã trở thành cơ sở dữ liệu mã nguồn mở phổ biến
+nhất trên thế giới vì cơ chế xử lý nhanh và ổn định của nó, sự đáng tin cậy cao
+và dễ sử dụng. Nó được sử dụng mọi nơi –ngay cả châu Nam Cực -bởi các nhà
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+phát triển Web riêng lẻ cũng như rất nhiều các tổ chức lớn nhất trên thế giới để
+tiết kiệm thời gian và tiền bạc cho những Web sites có dung lượng lớn, phần
+mềm đóng gói –bao gồm cả những nhà đi đầu trong lĩnh vực công nghiệp như
+Yahoo!, Alcatel-Lucent, Google, Nokia, YouTube và Zappos.com.
+MySQL không chỉ là cơ sở dữ liệu mã nguồn mở phổ biến nhất trên thế
+giới, nó còn trở thành cơ sở dữ liệu được chọn cho thế hệ mới của   các   ứng
+dụng   xây   dựng   trên   nền   Linux, Apache, MySQL, PHP/Perl/Python.
+MySQL chạy trên hơn 20 flatform bao gồm: Linux, Windows, OS/X, HP-UX,
+AIX, Netware, mang đến cho bạn tính linh hoạt trong việc sử dụng.
+ Tính linh hoạt
+ Tính thực thi cao
+ Có thể sử dụng ngay
+ Hỗ trợ giao dịch mạnh
+ Nơi lưu trữ Web và Data đáng tin cậy
+ Chế độ bảo mật dữ liệu mạnh
+ Sự phát triển ứng dụng hỗn hợp
+ Dễ dàng quản lý
+ Mã nguồn mở tự do và hỗ trợ 24/7
+ Tổng chi phí thấp nhất
+1.3 Mã nguồn mở Wordpress
+WordPress là một hệ quản trị nội dung Mã nguồn mở miễn phí viết bằng 
+ngôn ngữ lập trình PHP cùng cơ sở dữ liệu MySQL hoặc MariaDB. WordPress 
+là hậu duệ chính thức của b2/cafelog, được phát triển bởi Michel Valdrighi. Mọi
+người biết đến WordPress đơn giản là để viết Blog, để đăng tải thông tin của 
+mình lên mạng nhưng không đơn giản như vậy, WordPress còn có chức năng 
+như mọi Website khác. Nó có thể làm site tin tức, đánh giá, bán hàng, thậm chí 
+là mạng xã hội. Các bạn có   thể   ứng   dụng   wordpress   để   tạo   cho   mình   
+1 website   trên   nền wordpress, 1 website được tạo ra nhanh chóng đơn giản mà
+lại tiện cho việc quảng bá sản phẩm, thông tin, kiến thức …
+Khi tạo một website cho riêng bạn có thể sẽ có những lý do riêng, nhưng
+nếu so với các script và dịch vụ website khác, có thể bạn sẽ thích Wordpress ở
+những tính năng dưới đây.
+- Dễ cài đặt, chỉ cần khởi tạo database, upload và thiết lập tham số trong
+file wp-config.php, sau 1,2 lần click chuột, bạn đã sẵn sàng để viết blog.
+- Không giới hạn số lượng category và sub-category: bạn có thể tạo vô số
+chuyên mục và các chuyên mục con trong các chuyên mục chính mà
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+không gặp phải bất kì rắc rối nào. Tự động xuất RSS và Atom: giúp cập
+nhật các thông tin về blog của bạn ngay lập tức. 
+- Sử dụng giao diện XML RPC để trackback và viết bài từ xa.
+- Có thể đăng bài trên blog từ email.
+- Rất nhiều tài liệu hướng dẫn để giúp phát triển thêm tính năng, vànhiều bộ
+API để mở rộng. 
+- Dễ quản lý và duy trì mà chẳng cần phải có nhiều kĩ năng hay kinhnghiệm
+- Khả năng tìm kiếm trên blog rất tốt. 
+- Xuất bản nội dung ngay lập tức bất kể chiều dài của bài viết là baonhiêu. 
+- Hỗ trợ viết blog đa ngôn ngữ. 
+- Administration Panel được tổ chức rất tốt với rất nhiều tính năngnhưng lại
+dễ hiểu và dễ sử dụng. 
+- Quản lý liên kết dễ dàng.
+Plugin trong WordPress là một hoặc nhiều đoạn code được bổsung vào
+mã nguồn website WordPress. Plugin còn được gọi là phần mởrộng của website
+giúp bạn tùy chỉnh và bổ sung chức năng cho websiteWordPress của mình.
+Có hàng ngàn Plugin với những chức năng khác nhau. Chỉ cần bạncó nhu
+cầu, hầu hết các nhu cầu của bạn đều được Plugin hỗ trợ và sẵnsàng cho bạn sử
+dụng. Bạn có thể dùng Plugin trong WordPress chonhiều thể loại website khác
+nhau một cách đơn giản. 
+Plugin là một thành phần không thể thiếu trong website WordPresscủa
+bạn. Bất kể bạn làm website gì, bạn sử dụng Theme tự Code hayTheme trên
+mạng thì việc sử dụng Pluign là điều chắc chắn. Ngoài việchỗ trợ xây dựng thêm
+chức năng cho website. Bạn cũng sẽ tìm đượcnhững Plugin hỗ trợ cho các vấn
+đề như: Plugin Seo, Plugin tăng tốc, Plugin tối ưu website, Plugin bảo mật …
+1.4 XAMPP
+Xampp là chương trình tạo máy chủ Web (Web Server) được tíchhợp sẵn
+Apache,  PHP,  MySQL,  FTP  Server,  Mail  Server  và  các  công  cụnhư
+phpMyAdmin. Không như Appserv, Xampp có chương trình quản lýkhá tiện lợi,
+cho phép chủ động bật tắt hoặc khởi động lại các dịch vụmáy chủ bất kỳ lúc nào.
+Xampp được sử dụng cho mục đích nghiên cứu, phát triển websitequa
+Localhost của máy tính cá nhân, nó được ứng dụng trong nhiều lĩnhvực từ học
+tập đến nâng cấp, thử nghiệm Website của các lập trình viên.
+Các ưu điểm của Xampp bao gồm:
+ Xampp có thể chạy được trên tất cả các hệ điều hành: Từ Cross-
+platform, Window, MacOS và Linux.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+ Xampp có cấu hình đơn giản cũng như nhiều chức năng hữu ích
+cho người dùng. Tiêu   biểu   gồm:   giả lập   Server, giả lập  Mail
+Server, hỗ trợ SSL trên Localhost.
+ Xampp tích hợp nhiều thành phần với các tính năng:
+- Apache
+- PHP (tạo môi trường chạy các tập tin script *.php);
+- MySql (hệ quản trị dữ liệu Mysql); Thay vì phải cài đặt
+từngthành phần trên, giờ đây các bạn chỉ cần cài Xampp là
+chúng tacó 1 web server hoàn chỉnh.
+- Mã nguồn mở: Không như Appserv, Xampp có giao diện
+quảnlý khá tiện lợi. Nhờ đó, người dùng có thể chủ động bật
+tắt hoặckhởi động lại các dịch vụ máy chủ bất kỳ lúc nào. 
+Tuy nhiên, bởi vì có cấu hình đơn giản nên Xampp không được hỗtrợ cấu
+hình Module, cũng không có Version MySQL, do đó, đôi khi sẽmang   đến   sự
+bất   tiện   cho   người   dùng.   Bên   cạnh   đó, dung   lượngcủa Xampp cũng
+tương đối nặng, dung lượng file cài đặt của Xampp là141Mb
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+CHƯƠNG 2: KIẾN TRÚC CỦA PHẦN MỀM MÃ NGUỒN MỞ
+1. Kiến trúc chìm
+WordPress  không  chấp  nhận  mô  hình  kiến  trúc  MVC  (Model-View-
+Controller) truyền thống một cách hoàn chỉnh. Thay vào đó, nó sử dụng một mô
+hình kiến trúc khác, một số người gọi là "kiến trúc chìm" (chủ yếu là mô hình xử
+lý yêu cầu).
+Khi nói đến "kiến trúc chìm" trong WordPress, điều này thường được đề cập
+đến việc làm thế nào WordPress xử lý yêu cầu và quản lý mã nguồn của mình
+mà không phải sử dụng một cách tiếp cận truyền thống với mô hình kiến trúc
+MVC.
+Mô hình kiến trúc MVC truyền thống bao gồm ba thành phần chính:
+ Model (M): Đại diện cho dữ liệu và logic liên quan đến dữ liệu. Trong
+WordPress, dữ liệu thường được lưu trữ trong cơ sở dữ liệu MySQL và
+các hàm liên quan đến dữ liệu được đặt trong các file PHP hoặc classes.
+ View (V): Đại diện cho giao diện người dùng. Trong WordPress, views
+thường được đại diện bởi các file template PHP và các theme.
+ Controller (C): Điều khiển luồng làm việc và tương tác giữa Model và
+View. Trong WordPress, các controllers thường được xử lý bởi các file
+PHP, nhưng WordPress không có một lớp controller rõ ràng.
+Trong khi đó, WordPress sử dụng mô hình kiến trúc khác, thường được gọi
+là "kiến trúc chìm" hoặc "kiến trúc hành vi". Thay vì có một phân chia rõ ràng
+giữa Model, View và Controller, WordPress chủ yếu tập trung vào xử lý các yêu
+cầu HTTP và thực hiện các hành động tương ứng.
+Cụ thể, quá trình xử lý yêu cầu trong WordPress thường bắt đầu bằng việc
+xác định loại yêu cầu (ví dụ: yêu cầu trang chủ, yêu cầu bài viết cụ thể). Sau đó,
+WordPress sẽ xác định và thực hiện các hành động tương ứng với yêu cầu đó
+thông qua các hooks và filters.
+Dưới đây là mô tả chi tiết hơn về cách WordPress thực hiện quá trình xử lý
+yêu cầu và quản lý mã nguồn của mình:
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+ Quá trình xử lý yêu cầu:
+Khi một yêu cầu HTTP được gửi đến WordPress (ví dụ: người dùng truy
+cập một trang web WordPress), quá trình bắt đầu từ file index.php trong
+thư mục gốc của WordPress.
+Index.php  sẽ  thiết  lập  môi  trường  và  sau  đó  "gọi"  file  wp-blog-
+header.php, nơi chứa các hàm xử lý chính cho việc định tuyến và xử lý
+yêu cầu.
+ Hooks và Filters:
+Trong wp-blog-header.php, WordPress sử dụng một loạt các action hooks
+và filter hooks để định tuyến và xử lý yêu cầu. Các hooks này cho phép
+các lập trình viên "gắn kết" các hàm của mình vào các điểm cụ thể trong
+quá trình xử lý.
+Action hooks thường được sử dụng để thực hiện các hành động, trong khi
+filter hooks thường được sử dụng để thay đổi dữ liệu.
+ Các hành động và bộ lọc quan trọng:
+init: Action hook này được kích hoạt khi WordPress bắt đầu quá trình
+khởi tạo, cho phép bạn thực hiện các hành động liên quan đến khởi tạo.
+template_redirect: Action hook này chạy trước khi template (giao diện
+người dùng) được chọn và hiển thị, cung cấp cơ hội để thực hiện các hành
+động trước khi trang web được hiển thị.
+the_content: Filter hook này cho phép bạn thay đổi nội dung của bài viết
+trước khi nó được hiển thị.
+Các hành động và bộ lọc trong quá trình xử lý yêu cầu:
+Trong quá trình xử lý yêu cầu, WordPress sẽ kiểm tra loại yêu cầu và thực
+hiện các hành động tương ứng. Ví dụ, nếu đó là yêu cầu trang chủ,
+WordPress sẽ kích hoạt action home và filter pre_get_posts để quyết định
+nội dung nào sẽ được hiển thị.
+ Thực hiện hành động của Theme và Plugin:
+Sau khi WordPress xác định loại yêu cầu và thực hiện các hành động mặc
+định, nó sẽ thực hiện các hành động và bộ lọc của theme và các plugin
+được kích hoạt.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Điều này cho phép theme và plugin can thiệp và tùy chỉnh quá trình xử lý
+yêu cầu mà không cần can thiệp trực tiếp vào mã nguồn core.
+ Hiển thị nội dung:
+Cuối cùng, sau khi tất cả các xử lý đã được thực hiện, WordPress sẽ chọn
+template phù hợp và hiển thị nội dung được tạo ra.
+2. Những thư mục cơ bản
+Hệ thống thư mục cơ bản của một cài đặt WordPress chứa các phần quan
+trọng của mã nguồn, dữ liệu và tùy chọn tùy chỉnh. Dưới đây là mô tả chi tiết về
+các thư mục quan trọng nhất:
+wp-admin:
+ Chức năng: Thư mục này chứa tất cả các file và thư mục liên quan đến
+phần quản trị của trang web WordPress.
+ Nhiệm vụ: Cung cấp giao diện quản trị cho người quản trị trang web. Tất
+cả các công cụ và tính năng quản trị đều được quản lý tại đây.
+wp-includes:
+ Chức năng: Chứa các file core và thư viện cần thiết để chạy WordPress.
+ Nhiệm vụ: Bao gồm các file quan trọng như các hàm PHP cốt lõi, thư
+viện JavaScript, và các file khác mà WordPress cần để hoạt động đúng
+cách.
+wp-content:
+ Chức năng: Thư mục này chứa tất cả các dữ liệu được tạo ra và tùy chỉnh
+bởi người sử dụng và các nhà phát triển.
+ Nhiệm vụ: Lưu trữ các theme, plugin, và tất cả các file tải lên như hình
+ảnh, video, và tệp tin đính kèm. Đây là nơi mà bạn thường xem xét và can
+thiệp nếu bạn muốn tùy chỉnh giao diện hoặc mở rộng tính năng của trang
+web.
+wp-content/themes:
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+ Chức năng: Là nơi chứa các theme (giao diện) được sử dụng bởi trang
+web.
+ Nhiệm vụ: Mỗi theme thường nằm trong một thư mục con riêng và chứa
+các file template, stylesheet, và các tài nguyên khác để định hình giao
+diện người dùng.
+wp-content/plugins:
+ Chức năng: Là nơi chứa các plugin được sử dụng bởi trang web.
+ Nhiệm vụ: Mỗi plugin thường nằm trong một thư mục con riêng và chứa
+các file PHP, stylesheet, và tài nguyên khác để thêm chức năng mới vào
+trang web.
+wp-content/uploads:
+ Chức năng: Là nơi chứa tất cả các file được tải lên, bao gồm hình ảnh,
+video, và tệp tin đính kèm khác.
+ Nhiệm vụ: Giữ các tệp tin đa phương tiện mà người dùng tải lên từ giao
+diện quản trị hoặc qua các bài viết và trang.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+CHƯƠNG 3: ÁP DỤNG MÃ NGUỒN MỞ XÂY DƯNG WEBSITE
+3.1 Giới thiệu về website
+Khảo sát hiện trạng
+Nhu cầu mua sắm online tăng mạnh đặc biệt là ở các bạn trẻ. Đối tượng
+chính mà Website Baami hướng đến là các bạn trẻ mua có nhu cầu mua giày thể
+thao chính hãng.
+Nhằm giới thiệu giày thể thao của website đến tất cả các khách hàng có
+nhu cầu mua sắm sách qua mạng và phục vụ công tác quản lý, hoạt động kinh
+doanh, hệ thống bước đầu sẽ phục vụ cho khách hàng với những chức năng cần
+thiết nhất để khách hàng có thể đăng ký mua, đồng thờigiúp nhân viên, người
+quản trị dễ dàng quản lý được việc mua bán và nắm bắt thông tin nhanh chóng.
+Một số chức năng cần thiết phải đạt đượcnhư sau:
+Đối với khách hàng:
+ Hệ thống có thể giúp khách hàng tìm kiếm sản phẩm nhanh chóng.
+ Hệ thống đưa ra chi tiết thông tin cho từng sản phẩm mà khách
+hàng muốn xem.
+ Thêm sản phẩm vào giỏ hàng, đặt hàng qua mạng.
+ Ngoài ra khách hàng có thể đóng góp ý kiến, bình luận cùng sản
+phẩm có trên website. 
+Đối với quản trị:
+ Hệ thống có thể giúp người quản trị, nhân viên cập nhật thông tin
+nhanh chóng.
+ Đơn hàng của khách hàng cũng như dữ liệu được đưa về hệ thống.
+ Dễ dàng quản lý, sử dụng website, kiểm kê đơn hàng chính xác, rõ
+ràng, bảo mật thông tin khách hàng.
+Website chúng tôi
+Lợi ích đầu tiên khi sở hữu một website bán giày online đó chính là tiếp
+cận khách hàng tiềm năng. Dù khách hàng ở bất cứ đâu, chỉ cần có mạng
+internet là có thể tìm thấy website bán giày của bạn, biết đến sản phẩm bạn đang
+kinh doanh. Từ đó, chắc chắn rằng lượng khách hàng của bạn sẽ tăng lên đáng
+kể. Sản phẩm của Baami chủ yếu là những đôi giày chính hãng dành cho tất cả
+khách hàng
+Đối với website bán hàng, các chức năng tiện ích bán hàng của website
+cũng là một yếu tố cần thiết đến việc thu hút khách hàng. Do đó, khi thiết kế
+website cần chú ý đến các chức năng trên website, phải làm sao hữu dụng với
+người dụng và người quản trị thì việc kinh doanh mớiđạt hiệu quả
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Phương pháp nghiên cứu
+ Nghiên cứu và xây dựng hệ thống bằng mã nguồn mở Wordpress,
+ngôn ngữ lập trình PHP và Hệ quản trị cơ sở dữ liệu MySQL
+ Phân tích hệ thống.
+ Thiết kế giao diện và chức năng website.
+ Sửa lỗi và hoàn thiện website
+3.2 Cài đặt website
+3.2.1 Cài đ t ph n m m Xamppặ ầ ề
+Dowload Xampp và tải file vừa tải về cài đặt Xampp:
+Hình 3. 1 Màn hình Welcome của Xampp
+Sau khi màn hình Welcome của setup hiện ra thì chọn "Next". Tại màn
+hình này chọn các ứng dụng kèm theo của bộ Xampp, có thể bỏ những phần
+không cần thiết.
+Hình 3. 2. Màn hình Setup - Select Components
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Chọn thư mục để cài đặt, chứa thư mục Xampp, thường để mặcđịnh C:\
+xampp.
+Hình 3. 3 Màn hình Setup - Installation folder
+Sau khi hoàn thành cài đặt Xampp, chọn “Finish” để kết thúc quá trình cài
+đặt.
+Hình 3. 4 Hoàn thành cài đặt Xampp
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+3.2.2 T o Database b ng MyAdminạ ằ
+Sau khi cài đặt xong thì cửa sổ XAMPP Control Panel hiện lên, kích hoạt 
+Web Localhost bằng việc click vào 2 nút Star đầu tiên để khởi động Apache và 
+MySQL.
+Hình 3. 5 Khởi động Apache và MySQL
+Sau khi kích hoạt xong, click vào nút Admin bên cạnh nút Starđể tạo 
+Database. Khi đó màn hình quản trị phpMyAdmin hiện ra. Ngoàira, cũng có thể 
+nhập trực tiếp đường dẫn http://localhost/phpmyadmin/vào trình duyệt.
+Hình 3. 6 Giao diện phpMyAdmin
+Ở bảng điều khiển cột bên trái sẽ liệt kê danh sách tất cả các database, bên
+phải là các lựa chọn cài đặt và chỉnh sửa. Tại đây đã có thể lựa chọn thêm mới 
+database và tạo các bảng cho website.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+3.2.3 Cài đ t Wordpress và k t n i databaseặ ế ố
+Sau khi tải bộ cài đặt wordpress, copy và paste thư mục vào đườngdẫn
+C://…xampp/htdocs. Ở đây đặt tên thư mục là “BaamiShop”s:
+Hình 3.7. Cài đặt thư mục Wordpress
+Bắt đầu quá trình cài đặt cấu hình database.
+Hình 3. 7 Cài đặt cấu hình database
+Cấu hình database với: 
+ Tên database: tên database tạo ở phpmyadmin.
+ Tên người dùng:  tài khoản truy cập MySQL, thông thường là root.
+ Mật khẩu: mật khẩu của tài khoản được khai báo phía trên.
+ Database host: thông thường là localhost, giữ nguyên không cầnthay đổi.
+ Tên tiền tố bảng dữ liệu: ký tự đầu tiên xuất hiện trong tên bảng, ví dụ 
+như bảng wp_user.
+ Sau khi xác nhận thông tin, chọn “Gửi” và trang web sẽ tiến hànhcài đặt 
+website. 
+ Khi hoàn thành cài đặt, màn hình Wordpress admin hiện ra.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Hình 3. 8 Đăng nhập Wordpress
+3.3 Chuyển trang web từ Localhost lên Hosting
+3.3.1 Thông tin tên mi n (Domain)ề
+Sau khi mua tiên miền nhà cung cấp sẽ gửi đến gmail đăng ký tài khoản 
+và mật khẩu đăng nhập vào trang quản trị domain:
+Hình 3. 9 Thông tin tên miền
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+3.3.2 Thông tin hosting
+Sau khi mua hosting thì nhà cung cấp sẽ gửi đến gmail đăng ký tên tài 
+khoản, mật khẩu và đường dẫn tới trang quản trị hosting
+Hình 3. 10 Thông tin hosting
+3.3.3 Tri n khai trang webể
+Đầu tiên ta cần nén file thành đuôi .zip
+Hình 3. 11 Nén file thành
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Sau đó ta truyền mã nguồn vào file manager trong trang quản trị hosting:
+Hình 3. 12 Truyền mà nguồn vào hosting
+Đối với database xuất dữ liệu trên trang phpMyAdmin:
+Hình 3. 13 Xuất dữ liệu trên phpMyAdmin
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Với trang quản trị hosting truy cập SQL Management tạo một cơ sở dữ 
+liệu, sau đó đăng nhập vào cơ sở dữ liệu với tên và tài khoản đã đăng ký truyền 
+dữ liệu vừa xuất từ trang phpMyAdmin:
+Hình 3. 14 Truyền dữ liệu vừa xuất
+Sau khi đã tải đầy đủ mã nguồn vào trang quản trị hosting trang web đã đc
+up lên hosting:
+ 
+Hình 3. 15 Web sau khi up lên hosting
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+Chương 4: Thiết kế giao diện và kiểm thử
+4.1 Giao diện người dùng
+4.1.1 Trang chủ
+Hình 4. 1 Giao diện trang chủ
+4.1.2 Blog
+Hình 4. 2 Giao diện trang blog
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.1.3 Danh mục sản phẩm
+Hình 4. 3 Giao diện trang sản phẩm
+4.1.4 Chi tiết sản phẩm
+Hình 4. 4 Giao diện trang chi tiết sản phẩm
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.1.5 Liên hệ
+Hình 4. 5 Giao diện trang liên hệ
+4.2.6 Tài kho nả
+Hình 4. 6 Giao diện trang tài khoản
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.2.7 Gi  hàngỏ
+Hình 4. 7 Giao diện trang giỏ hàng
+4.2.8 Thanh toán
+Hình 4. 8 Giao diện trang thanh toán
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.2 Trang quản trị hệ thống
+4.2.1 Trang qu n tr  bài vi tả ị ế
+Hình 4. 9 Giao diện trang quản trị bài viết
+Hình 4. 10 Giao diện trang thêm bài viết
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.2.2 Trang qu n tr  s n ph mả ị ả ẩ
+Hình 4. 11 Giao diện trang quản trị sản phẩm
+Hình 4. 12 Giao diện trang thêm sản phẩm
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.2.3 Trang menu
+Hình 4. 13 Giao diện trang menu
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+4.2.4 Trang danh m c s n ph mụ ả ẩ
+Hình 4. 14 Giao diện trang danh mục sản phẩm
+4.3 Thông tin phần mềm
+4.3.1 Giao diện sử dụng theme
+Hình 4. 15 Giao sử dung theme
+4.3.2 Các Plugin đang sử dụng
+Hi n t i website đang s  d ng 7 pluginệ ạ ử ụ
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+
+KẾT LUẬN
+Đánh giá kết quả
+Hiểu biết về phần mềm mã nguồn mở, ngôn ngữ lập trình PHP và Hệ
+quản trị cơ sở dữ liệu MySQL.
+Cài đặt và sử dụng thành thạo Xampp và Wordpress.
+Xây dựng được một hệ thống website bán giày thể thao online tương đối
+hoàn chỉnh với các chức năng chính như: các loại giày thể thao hot, đang giảm
+giá, best seller, mua giày, đặt hàng, chỉnh sửa hồ sơ, …
+Hệ thống hỗ trợ tốt cho quản trị viên quản lý website tốt hơn với các
+chứcnăng như: quản lý danh mục giày thể thao (thêm, sửa, xóa), quản lý người
+dùng, giao dịch, xem thống kê, ... 
+Giao diện trực quan, dễ sử dụng, cung cấp đầy đủ thông tin laptop. Cập
+nhật các loại giày thao mới thường xuyên, …
+Đảm bảo quyền sử dụng, quyền riêng tư và tính bảo mật đối với thông
+tincủa người dùng.
+Hướng phát triển
+Ngày nay với sự phát triển không ngừng nghỉ của công nghệ và kỹ thuật
+thì việc nâng cấp hệ thống để không bị lạc hậu là điều hiển nhiên. Đối với
+website “Baami” cũng vậy, nếu có cơ hội và thời gian thì sau đây là nhữngđiều
+mà hệ thống “Baami” cần được phát triển thêm:
+•Tích hợp đăng nhập Google và Facebook vào hệ thống để giúp cho
+khách hàng có thể tự do đăng nhập và tạo sự thuận tiện hơn cho khách hàng.
+•Phát triển Fanpage giới thiệu sản phẩm.
+•Tối ưu giao diện cho các thiết bị di động.
+Downloaded by t?p nhà cho ??n khi  (nh.hoanganh74@gmail.com)
+lOMoARcPSD|38606211
+

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				labels: payload.labels || [],
 				datasets: [
 					{
-						label: 'Bookings',
+						label: 'Đơn đặt vé',
 						data: payload.values || [],
 						backgroundColor: '#c49a27',
 						borderRadius: 12
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			gridNode.appendChild(rowNode);
 		}
 
-		summaryNode.textContent = `${activeCount} active seats, ${inactiveCount} inactive seats`;
+		summaryNode.textContent = `${activeCount} ghế hoạt động, ${inactiveCount} ghế không hoạt động`;
 	};
 
 	[

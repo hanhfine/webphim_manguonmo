@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720" fill="none">
+  <rect width="480" height="720" fill="#111111"/>
+  <rect x="24" y="24" width="432" height="672" rx="22" fill="url(#g1)"/>
+  <circle cx="360" cy="180" r="82" fill="#E0B86A" fill-opacity=".85"/>
+  <path d="M100 590C168 470 244 410 328 358C288 468 254 548 226 618L100 590Z" fill="#231B1E"/>
+  <path d="M148 612C212 470 278 386 370 300" stroke="#F9EAD6" stroke-width="9" stroke-linecap="round"/>
+  <text x="58" y="104" fill="#FFF6EA" font-family="Arial, sans-serif" font-size="34" font-weight="700">MIDNIGHT</text>
+  <text x="58" y="146" fill="#FFF6EA" font-family="Arial, sans-serif" font-size="34" font-weight="700">SAIGON</text>
+  <text x="58" y="658" fill="#FFF6EA" font-family="Arial, sans-serif" font-size="20" font-weight="700">THRILLER / NIGHT CHASE</text>
+  <defs>
+    <linearGradient id="g1" x1="40" y1="24" x2="420" y2="696" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2C1E24"/>
+      <stop offset=".55" stop-color="#8D352D"/>
+      <stop offset="1" stop-color="#1B1416"/>
+    </linearGradient>
+  </defs>
+</svg>

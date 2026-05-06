@@ -5,22 +5,22 @@ if (! defined('ABSPATH')) {
 }
 ?>
 <div class="wrap cinema-admin-wrap">
-	<h1><?php esc_html_e('Revenue Reports', 'cinema-booking'); ?></h1>
+	<h1><?php esc_html_e('Báo cáo doanh thu', 'cinema-booking'); ?></h1>
 
 	<div class="cinema-panel">
 		<table class="widefat striped">
 			<thead>
 				<tr>
-					<th><?php esc_html_e('Movie', 'cinema-booking'); ?></th>
-					<th><?php esc_html_e('Bookings', 'cinema-booking'); ?></th>
-					<th><?php esc_html_e('Seats Sold', 'cinema-booking'); ?></th>
-					<th><?php esc_html_e('Revenue', 'cinema-booking'); ?></th>
+					<th><?php esc_html_e('Phim', 'cinema-booking'); ?></th>
+					<th><?php esc_html_e('Đơn đặt vé', 'cinema-booking'); ?></th>
+					<th><?php esc_html_e('Ghế đã bán', 'cinema-booking'); ?></th>
+					<th><?php esc_html_e('Doanh thu', 'cinema-booking'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php if (empty($report_rows)) : ?>
 					<tr>
-						<td colspan="4"><?php esc_html_e('No report data yet.', 'cinema-booking'); ?></td>
+						<td colspan="4"><?php esc_html_e('Chưa có dữ liệu báo cáo.', 'cinema-booking'); ?></td>
 					</tr>
 				<?php endif; ?>
 				<?php foreach ($report_rows as $movie_title => $row) : ?>

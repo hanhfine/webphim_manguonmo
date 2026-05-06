@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Cinema Booking System
- * Description: Booking system for movies, screening rooms, showtimes, seats, payments, and tickets.
+ * Plugin Name: MYCINEMA Booking System
+ * Description: WordPress booking system for movies, screening rooms, showtimes, seats, payments, and tickets.
  * Version: 0.1.0
  * Author: Codex
  * Text Domain: cinema-booking
@@ -26,7 +26,7 @@ function cinema_booking_get_single_cinema_name() {
 
 	$blog_name = wp_specialchars_decode(get_bloginfo('name'), ENT_QUOTES);
 
-	return $blog_name ? $blog_name : __('Main Cinema', 'cinema-booking');
+	return $blog_name ? $blog_name : __('MYCINEMA', 'cinema-booking');
 }
 
 function cinema_booking_get_single_cinema_address() {
@@ -57,6 +57,10 @@ function cinema_booking_get_integration_key() {
 }
 
 require_once CINEMA_BOOKING_PATH . 'includes/class-database.php';
+require_once CINEMA_BOOKING_PATH . 'includes/class-movie-repository.php';
+require_once CINEMA_BOOKING_PATH . 'includes/class-room-repository.php';
+require_once CINEMA_BOOKING_PATH . 'includes/class-showtime-repository.php';
+require_once CINEMA_BOOKING_PATH . 'includes/class-booking-repository.php';
 require_once CINEMA_BOOKING_PATH . 'includes/class-seat-manager.php';
 require_once CINEMA_BOOKING_PATH . 'includes/class-booking-manager.php';
 require_once CINEMA_BOOKING_PATH . 'includes/class-payment-handler.php';
@@ -71,6 +75,26 @@ final class Cinema_Booking_System {
 	 * @var Cinema_Booking_System|null
 	 */
 	private static $instance = null;
+
+	/**
+	 * @var Cinema_Movie_Repository
+	 */
+	public $movie_repo;
+
+	/**
+	 * @var Cinema_Room_Repository
+	 */
+	public $room_repo;
+
+	/**
+	 * @var Cinema_Showtime_Repository
+	 */
+	public $showtime_repo;
+
+	/**
+	 * @var Cinema_Booking_Repository
+	 */
+	public $booking_repo;
 
 	/**
 	 * @var Cinema_Booking_Seat_Manager
@@ -122,20 +146,24 @@ final class Cinema_Booking_System {
 
 	private function __construct() {
 		$this->maybe_seed_defaults();
+		$this->movie_repo       = new Cinema_Movie_Repository();
+		$this->room_repo        = new Cinema_Room_Repository();
+		$this->showtime_repo    = new Cinema_Showtime_Repository();
+		$this->booking_repo     = new Cinema_Booking_Repository();
 		$this->seat_manager     = new Cinema_Booking_Seat_Manager();
-		$this->booking_manager  = new Cinema_Booking_Booking_Manager($this->seat_manager);
-		$this->ticket_generator = new Cinema_Booking_Ticket_Generator($this->booking_manager);
-		$this->payment_handler  = new Cinema_Booking_Payment_Handler($this->booking_manager, $this->ticket_generator);
-		$this->post_types       = new Cinema_Booking_Post_Types($this->seat_manager);
+		$this->booking_manager  = new Cinema_Booking_Booking_Manager( $this->seat_manager, $this->booking_repo, $this->showtime_repo );
+		$this->ticket_generator = new Cinema_Booking_Ticket_Generator( $this->booking_manager );
+		$this->payment_handler  = new Cinema_Booking_Payment_Handler( $this->booking_manager, $this->ticket_generator );
+		$this->post_types       = new Cinema_Booking_Post_Types( $this );
 		$this->showtime_cron    = new Cinema_Booking_Showtime_Cron();
-		$this->admin_menu       = new Cinema_Booking_Admin_Menu($this->booking_manager);
+		$this->admin_menu       = new Cinema_Booking_Admin_Menu( $this->booking_manager );
 		$this->rest_api         = new Cinema_Booking_REST_API(
 			$this->seat_manager,
 			$this->booking_manager,
 			$this->payment_handler
 		);
 
-		add_action('init', array($this, 'register_roles'));
+		add_action( 'init', array( $this, 'register_roles' ) );
 	}
 
 	public function register_roles() {
@@ -190,6 +218,12 @@ final class Cinema_Booking_System {
 		$plugin = self::instance();
 
 		Cinema_Booking_Database::install();
+
+		// Run data migration if not already done.
+		if ( get_option( 'cinema_booking_migration_done' ) !== '2.0.0' ) {
+			Cinema_Booking_Database::migrate_from_post_types();
+		}
+
 		$plugin->register_roles();
 		$plugin->maybe_seed_defaults();
 		$plugin->post_types->register_content_types();
